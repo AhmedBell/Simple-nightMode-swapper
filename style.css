@@ -1,0 +1,212 @@
+body{
+    --accent : orangered; 
+    --background-color: white;
+    --text-color: black ; 
+    --btn-Text-Color : white;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    transition:  1s ;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow: hidden;
+    
+
+    
+}
+
+body.dark{
+    --accent :  #FFC91F ; 
+    --background-color: #333;
+    --text-color: white; 
+    --btn-Text-Color : #333;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    
+}
+
+.swap-btn{
+    background-color: var(--accent);
+    color: var(--btn-Text-Color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: .5em 1.5em ;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+
+    transform: scale(1);
+    transition: 1s;
+
+}
+.swap-btn:hover,
+.swap-btn:focus
+.swap-btn:active{
+    transform: scale(1.1);
+    
+}
+
+
+
+.title{
+    font-size: 4em;
+    margin: 0;
+    margin-bottom: 1rem;
+    transition: 1s ;
+   
+}
+
+.title:hover{
+    
+    transform: scale(1.2);
+}
+
+.icon{
+    margin-right: .5rem;
+    height: 30px;
+    width: 30px;
+}
+
+.sun-moon-container{
+    --rotation:0;
+    position: absolute;
+    top: 0%;
+    pointer-events: none;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vmin;
+    margin: 0;
+    
+    transform: rotate(calc(var(--rotation) * 1deg));
+    transition: 1s;
+
+}
+
+.dark .sun-moon-container {
+    --rotation :0;
+}
+
+.sun{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 10%;
+    fill: var(--accent);
+    transition: 1s ;
+    animation-name:bounce ;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+    opacity: 1;
+    
+    
+}
+
+.dark .sun {
+    transition: 1s ;
+    opacity: 0;
+    
+}
+
+
+.moon{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 10%;
+    fill: var(--accent);
+    transition: 1s ;
+    opacity: 0;
+    animation-name:bounce ;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+   
+}
+.dark .moon {
+    opacity: 1;
+    transition: 1s ;
+}
+
+
+@keyframes bounce {
+
+
+    0%{
+        transform: rotate(180deg) translateY(0px);
+        
+
+    }
+    50%{
+        transform: rotate(180deg) translateY(20px);
+    }
+    
+    100%{
+        transform:  rotate(180deg) translateY(0px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    body{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .title{
+        text-align: center;
+        font-size: 2em;
+        margin: 0;
+        margin-bottom: 1rem;
+        transition: 1s ;
+       
+    }
+
+    .swap-btn{
+       
+        font-size: 1rem;
+    
+        
+    
+    }
+
+    .sun{
+       
+        transition: .7s ;
+       
+        
+        
+    }
+    
+    .dark .sun {
+        transition: .7s ;
+        
+        
+    }
+    
+    
+    .moon{
+        
+        transition: .7s ;
+        
+       
+    }
+    .dark .moon {
+       
+        transition: .7s ;
+    }
+    
+    
+}

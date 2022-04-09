@@ -2,7 +2,7 @@ body{
     --accent : orangered; 
     --background-color: white;
     --text-color: black ; 
-    --btn-Text-Color : white;
+    --btn-Text-Color :var(--background-color);
     margin: 0;
     height: 100vh;
     display: flex;
@@ -23,7 +23,7 @@ body.dark{
     --accent :  #FFC91F ; 
     --background-color: #333;
     --text-color: white; 
-    --btn-Text-Color : #333;
+    
 
     background-color: var(--background-color);
     color: var(--text-color);
